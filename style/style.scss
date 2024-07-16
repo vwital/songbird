@@ -1,0 +1,297 @@
+$main-color: #355c7d;
+$main-light: #6c5b7b;
+$color: #c06c84;
+$text-color: #f8b195;
+$active-color: #f67280;
+$w-color: #fff;
+body {
+  background-color: $main-color;
+  font-family: 'Pacifico', cursive;
+  font-size: 10px;
+  transition: all 1s ease-out;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+//logo
+.logo {
+  position: relative;
+  z-index: 3;
+}
+.logo-text {
+  color: $w-color;
+}
+.logo-text-2 {
+  color: $color;
+  z-index: 3;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(2px 4px 6px $color);
+  fill: $w-color;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  z-index: -1;
+}
+
+.logo-text::before {
+  content: '';
+  width: 10px;
+  height: 5px;
+  color: #355c7d;
+  position: absolute;
+  top: 10px;
+}
+
+.score {
+  font-size: 2rem;
+  color: $w-color;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active {
+  color: $w-color;
+}
+
+//navigation
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+.nav {
+  background-color: $color;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+.menu-list {
+  list-style-type: none;
+}
+
+//guess bird
+
+.guess-bird {
+  background-color: $main-light;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.guess-bird__info {
+  width: 60%;
+}
+
+.audio {
+  height: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+// .char-audio {
+//   width: 100%;
+//   height: 20px;
+// }
+
+.guess-bird__image-container {
+  padding: 10px;
+  border: 10px;
+  border-radius: 10px;
+}
+
+.guess-bird__image {
+  width: 200px;
+  height: 150px;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.info__name {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.info__name::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+
+  position: absolute;
+  top: 10px;
+  display: block;
+  position: absolute;
+  border-bottom: 3px solid $color;
+  top: 50%;
+  margin-top: 20px;
+}
+
+//test
+
+.choice {
+  height: 100%;
+  width: 30%;
+  background-color: $main-light;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.choice-list-block {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.choice-list {
+  position: relative;
+  padding-left: 10px;
+}
+
+.choice-list-text {
+  margin-left: 20px;
+}
+
+.marker {
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: $w-color;
+  position: absolute;
+  top: 30%;
+}
+
+.marker-true {
+  background-color: green;
+}
+
+.marker-false {
+  background-color: red;
+}
+
+.choice-list {
+  border-bottom: 1px solid black;
+  border-radius: 2px;
+  padding-left: 10px;
+}
+
+.choice-list:hover {
+  background-color: $color;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.bird-charact {
+  width: 70%;
+  background-color: $main-light;
+  border-radius: 10px;
+  margin-left: 20px;
+  border: 1px solid black;
+  font-size: 1.1rem;
+}
+
+.guide {
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.test {
+  display: flex;
+  margin-top: 10px;
+}
+
+//birds-char
+.char-wrapper {
+  display: flex;
+}
+
+.char-img {
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+}
+
+.char-info {
+  display: block;
+  padding: 10px;
+}
+
+.next-level-button {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 80%;
+  height: 40px;
+  background-color: $main-light;
+  border-radius: 10px;
+  cursor: pointer;
+
+  span {
+    font-size: 1.2rem;
+    display: block;
+
+    text-align: center;
+  }
+}
+
+.next-level-button-active {
+  border: 2px solid $active-color;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: $main-light;
+  transition: all 1s ease-out;
+  transform: translate(1s);
+}
+
+.modal-content {
+  background-color: #355c7d;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid $active-color;
+  width: 80%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.modal-reload {
+  background-color: #c06c84;
+  border-radius: 10px;
+  width: 200px;
+  height: 40px;
+}
+
+.close {
+  color: $active-color;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #6c5b7b;
+  text-decoration: none;
+  cursor: pointer;
+}
